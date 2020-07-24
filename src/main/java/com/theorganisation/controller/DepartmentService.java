@@ -65,4 +65,9 @@ public class DepartmentService {
         }
         return dr.save(d);
     }
+
+    public Department addEmployee(long departmentid, long employeeid) {
+        System.out.println("Request received to add an employee");
+        return null;
+    }
 }
