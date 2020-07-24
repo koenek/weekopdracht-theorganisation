@@ -12,15 +12,6 @@ public class DepartmentEndpoint {
     @Autowired
     DepartmentService ds;
 
-    /*
-    - post
-    - get(all)
-    - get by id
-    - get by name
-    - delete by id
-    - update by id
-    */
-
     @PostMapping("/new")
     public Department addDepartment(@RequestBody Department dp) {
         return ds.addDepartment(dp);
@@ -51,6 +42,12 @@ public class DepartmentEndpoint {
     public Department updateDepartmentById(@PathVariable(value="id")long id, @RequestBody Department dp) {
         return ds.updateById(id, dp);
     }
+
+    @PutMapping("/addemployee/{departmentid}/{employeeid}")
+    public Department addEmployeeToDepartment(@PathVariable(value = "departmentid") long departmentid, @PathVariable(value = "employeeid") long employeeid) {
+        return ds.addEmployee(departmentid, employeeid);
+    }
+
 
 
 

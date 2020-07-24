@@ -1,17 +1,18 @@
 package com.theorganisation.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public abstract class Employee {
+@Table(name = "employee")
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    String name;
+    private String name;
+    private double salary;
+    // private ArrayList<Message> messages;
 
     public long getId() {
         return id;
@@ -37,14 +38,12 @@ public abstract class Employee {
         this.salary = salary;
     }
 
-    public ArrayList<Message> getMessages() {
+/*    public ArrayList<Message> getMessages() {
         return messages;
     }
 
     public void setMessages(ArrayList<Message> messages) {
         this.messages = messages;
-    }
+    }*/
 
-    double salary;
-    ArrayList<Message> messages;
 }
